@@ -18,3 +18,4 @@ spec:
         image: 777777777777777/myflaskpyapp:latest
         ports:
         - containerPort: 5000
+        imagePullPolicy: Always
