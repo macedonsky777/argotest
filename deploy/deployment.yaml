@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myflaskpyapp-deployment
+  namespace: macedonsky777
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myflaskpyapp
+  template:
+    metadata:
+      labels:
+        app: myflaskpyapp
+    spec:
+      containers:
+      - name: myflaskpyapp
+        image: 777777777777777/myflaskpyapp:latest
+        ports:
+        - containerPort: 5000
