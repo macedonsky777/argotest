@@ -4,7 +4,7 @@ metadata:
   name: my-application
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "myapp=777777777777777/myflaskpyapp:latest"
+    argocd-image-updater.argoproj.io/image-list: "myapp=777777777777777/myflaskpyapp"
     argocd-image-updater.argoproj.io/mycontainer.update-strategy: latest
 spec:
   project: default
