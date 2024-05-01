@@ -16,6 +16,7 @@ spec:
       containers:
       - name: myflaskpyapp
         image: 777777777777777/myflaskpyapp
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
-        imagePullPolicy: Always
+        
