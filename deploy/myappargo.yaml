@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-application
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: "myapp=777777777777777/myflaskpyapp:latest"
+    argocd-image-updater.argoproj.io/mycontainer.update-strategy: latest
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/macedonsky777/argotest'
+    path: deploy
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: macedonsky777
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Replace=true  # Заміна існуючих ресурсів при синхронізації

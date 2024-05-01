@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: myflaskpyapp-deployment
   namespace: macedonsky777
-  pp: aa
 spec:
   replicas: 2
   selector:
@@ -16,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myflaskpyapp
-        image: 777777777777777/myflaskpyapp:latest
+        image: 777777777777777/myflaskpyapp
         ports:
         - containerPort: 5000
         imagePullPolicy: Always
